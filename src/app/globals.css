@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: aadyaa --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "aadyaa";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #fbf8f2;
+  --color-base-200: #f4eee2;
+  --color-base-300: #e9dfcc;
+  --color-base-content: #221d17;
+  --color-primary: #b08d57;
+  --color-primary-content: #ffffff;
+  --color-secondary: #221d17;
+  --color-secondary-content: #fbf8f2;
+  --color-accent: #c9a96a;
+  --color-accent-content: #221d17;
+  --color-neutral: #2b251e;
+  --color-neutral-content: #f4eee2;
+  --color-info: #5b7b9a;
+  --color-info-content: #ffffff;
+  --color-success: #3e7c4f;
+  --color-success-content: #ffffff;
+  --color-warning: #b7791f;
+  --color-warning-content: #ffffff;
+  --color-error: #b42318;
+  --color-error-content: #ffffff;
+  --radius-selector: 0.25rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme inline {
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base-100 text-base-content font-sans antialiased;
+}
+
+::selection {
+  background: #b08d57;
+  color: #fff;
+}
+
+/* ---- luxury helpers ---- */
+.text-balance {
+  text-wrap: balance;
+}
+
+.tracking-luxe {
+  letter-spacing: 0.28em;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(100deg, #8a6a3a 0%, #c9a96a 40%, #f0dfb8 55%, #b08d57 75%, #8a6a3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* Embla overrides */
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla-hero__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .embla-products__slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla-products__slide {
+    flex: 0 0 33.3333%;
+  }
+}
+
+.embla-thumbs__slide {
+  flex: 0 0 22%;
+  min-width: 0;
+}
