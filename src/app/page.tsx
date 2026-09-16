@@ -4,6 +4,7 @@ import Carousel from "@/components/carousel";
 import ProductCard from "@/components/product-card";
 import Newsletter from "@/components/newsletter";
 import { getCategories, getFeaturedProducts, getNewArrivals } from "@/lib/data";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 export const dynamic = "force-dynamic";
 
@@ -134,7 +135,7 @@ export default async function HomePage() {
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
-          {categories.map((cat) => (
+          {categories.map((cat: { id: Key | null | undefined; slug: any; image: any; name: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; _count: { products: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }; }) => (
             <Link
               key={cat.id}
               href={`/shop?category=${cat.slug}`}
@@ -144,7 +145,7 @@ export default async function HomePage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={cat.image ?? ""}
-                  alt={cat.name}
+                  alt={String(cat.name ?? "")}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -167,7 +168,7 @@ export default async function HomePage() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/earring.jpg" alt="Master craftsman at work" className="aspect-[4/5] w-full object-cover" />
+              <img src="/images/ring-2.jpg" alt="Master craftsman at work" className="aspect-[4/5] w-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-accent/40 bg-base-100 px-6 py-5 shadow-xl sm:block">
               <p className="font-serif text-4xl font-semibold gold-gradient-text">20+</p>
@@ -224,7 +225,7 @@ export default async function HomePage() {
 
         <div className="mt-10">
           <Carousel slideClass="embla-products__slide" loop autoplay autoplayDelay={4200} showArrows>
-            {newArrivals.map((product) => (
+            {newArrivals.map((product: any) => (
               <div key={product.id} className="px-2">
                 <ProductCard product={product} />
               </div>
@@ -245,7 +246,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-8">
                 <Carousel slideClass="embla-products__slide" loop autoplay autoplayDelay={3800} showArrows arrowsDark>
-                  {featured.map((product) => (
+                  {featured.map((product: any) => (
                     <div key={product.id} className="px-2">
                       <ProductCard product={product} />
                     </div>
@@ -314,7 +315,7 @@ export default async function HomePage() {
 
       {/* ---------- TESTIMONIALS ---------- */}
       <section className="bg-secondary text-secondary-content relative overflow-hidden">
-        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-5xl px-4 py-18 sm:px-6">
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/story.jpg" alt="" className="h-full w-full object-cover" />
@@ -377,7 +378,7 @@ export default async function HomePage() {
           <img src="/images/hero-3.jpg" alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-secondary/80" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent">The Aadyaa Circle</p>
           <h2 className="mt-3 font-serif text-4xl font-semibold text-base-100 sm:text-5xl">
             Private Previews, First

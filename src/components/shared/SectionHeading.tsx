@@ -1,8 +1,9 @@
-interface Props {
+interface SectionHeadingProps {
   subtitle?: string;
   title: string;
   description?: string;
-  align?: "left" | "center" | "right";
+  align?: "center" | "left";
+  className?: string;
 }
 
 export default function SectionHeading({
@@ -10,29 +11,38 @@ export default function SectionHeading({
   title,
   description,
   align = "center",
-}: Props) {
-  const alignCls = {
-    left: "text-left items-start",
-    center: "text-center items-center",
-    right: "text-right items-end",
-  };
-
+  className = "",
+}: SectionHeadingProps) {
+  const centered = align === "center";
   return (
-    <div className={`flex flex-col ${alignCls[align]} max-w-3xl mx-auto`}>
-      {subtitle && (
-        <p className="text-gold-600 text-sm font-semibold uppercase tracking-[0.15em] mb-3">
-          {subtitle}
-        </p>
-      )}
-      <h2 className="font-serif text-3xl md:text-5xl font-bold text-navy-900 leading-tight">
+    <div
+      className={`${centered ? "text-center mx-auto" : "text-left"} max-w-3xl ${className}`}
+    >
+      {subtitle ? (
+        <div
+          className={`flex items-center gap-3 ${
+            centered ? "justify-center" : "justify-start"
+          }`}
+        >
+          <span className="h-px w-8 bg-primary/50" aria-hidden="true" />
+          <p className="text-primary text-[0.68rem] font-semibold uppercase tracking-luxe">
+            {subtitle}
+          </p>
+          <span className="h-px w-8 bg-primary/50" aria-hidden="true" />
+        </div>
+      ) : null}
+      <h2 className="font-serif mt-4 text-3xl sm:text-4xl md:text-[2.6rem] font-bold leading-tight text-base-content text-balance">
         {title}
       </h2>
-      {description && (
-        <p className="text-slate-600 text-base md:text-lg mt-4 max-w-2xl">
+      {description ? (
+        <p
+          className={`mt-4 text-sm sm:text-base leading-relaxed text-base-content/60 ${
+            centered ? "mx-auto" : ""
+          } max-w-2xl`}
+        >
           {description}
         </p>
-      )}
-      <div className="w-16 h-1 bg-gradient-to-r from-gold-400 to-rose-400 mt-6 rounded-full" />
-    </div>                    
+      ) : null}
+    </div>
   );
 }

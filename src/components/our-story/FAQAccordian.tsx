@@ -50,8 +50,8 @@ export default function FAQAccordion() {
             key={i}
             className={`rounded-2xl border transition-colors duration-300 ${
               isOpen
-                ? "border-gold-300 bg-white shadow-md"
-                : "border-stone-200 bg-white/70 hover:border-gold-200"
+                ? "border-accent/70 bg-base-100 shadow-md"
+                : "border-base-300 bg-base-100/70 hover:border-accent/40"
             }`}
           >
             <button
@@ -59,11 +59,11 @@ export default function FAQAccordion() {
               className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-left"
               aria-expanded={isOpen}
             >
-              <span className="font-semibold text-navy-900 text-sm sm:text-base">
+              <span className="font-semibold text-base-content text-sm sm:text-base">
                 {f.q}
               </span>
               <ChevronDown
-                className={`w-5 h-5 shrink-0 text-gold-600 transition-transform duration-300 ${
+                className={`w-5 h-5 shrink-0 text-primary transition-transform duration-300 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -74,7 +74,7 @@ export default function FAQAccordion() {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-base-content/60 leading-relaxed">
                   {f.a}
                 </p>
               </div>

@@ -22,17 +22,17 @@ export const metadata: Metadata = {
     "Learn about Aadyaa Jewels — Delhi NCR's oldest lab-grown diamond brand. Ring & bangle sizing charts, jewellery care, resizing, repairs and FAQs.",
 };
 
-/* ── Hotlinked imagery (no local files) ── */
+/* ── Imagery (stock, hotlinked) ── */
 const HERO_IMG =
-  "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1920&q=80";
+  "https://images.pexels.com/photos/12427696/pexels-photo-12427696.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1920&h=1080";
 const RESIZE_IMG =
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80";
+  "https://images.pexels.com/photos/6263112/pexels-photo-6263112.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=620";
 const REPAIR_IMG =
-  "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?auto=format&fit=crop&w=800&q=80";
+  "https://images.pexels.com/photos/7167019/pexels-photo-7167019.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=620";
 const BANGLE_IMG =
-  "https://images.unsplash.com/photo-1786052351696-b2a1f50d3454?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGJhbmdsZXxlbnwwfHwwfHx8MA%3D%3D";
+  "https://images.pexels.com/photos/9808451/pexels-photo-9808451.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=750";
 
-/* ── Ring sizing data (exactly as provided) ── */
+/* ── Ring sizing data ── */
 const ringSizes = [
   { in: 1, usa: "1.75", dia: "13.06", circ: "41" },
   { in: 2, usa: "2", dia: "13.26", circ: "41.7" },
@@ -107,30 +107,33 @@ const bangleTips = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-base-100 text-base-content">
       {/* ───────────────────────── HERO ───────────────────────── */}
-      <section className="relative h-[52vh] min-h-[420px] flex items-center overflow-hidden">
+      <section className="relative h-[52vh] min-h-[440px] flex items-center overflow-hidden bg-secondary">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-secondary/80"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-neutral/80 to-secondary/70"
+          className="absolute inset-0 bg-gradient-to-r from-neutral/85 via-secondary/75 to-secondary/60"
           aria-hidden="true"
         />
-        <div className="relative container mx-auto px-6 sm:px-8 text-white">
-          <nav className="flex items-center gap-2 text-xs md:text-sm text-slate-300 mb-6">
-            <Link href="/" className="hover:text-gold-400 transition">
+        <div className="relative container mx-auto px-6 sm:px-8 text-secondary-content">
+          <nav
+            className="flex items-center gap-2 text-xs md:text-sm text-secondary-content/60 mb-6"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" className="hover:text-secondary-content transition">
               Home
             </Link>
-            <span>/</span>
-            <span className="text-gold-400">About</span>
+            <span aria-hidden="true">/</span>
+            <span className="text-accent font-medium">About</span>
           </nav>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 max-w-2xl">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 max-w-2xl text-balance">
             About <span className="gold-gradient-text">Aadyaa Jewels</span>
           </h1>
-          <p className="text-slate-200 text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="text-secondary-content/80 text-base md:text-lg max-w-xl leading-relaxed">
             Delhi NCR&apos;s oldest exclusive lab-grown diamond brand. Explore
             our care, resizing, sizing guides and answers to everything you need
             to know.
@@ -143,9 +146,9 @@ export default function AboutPage() {
             ].map(({ icon: Icon, label }, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium"
+                className="inline-flex items-center gap-2 bg-secondary-content/10 backdrop-blur-sm border border-secondary-content/25 rounded-full px-4 py-2 text-sm font-medium"
               >
-                <Icon className="w-4 h-4 text-gold-400" /> {label}
+                <Icon className="w-4 h-4 text-accent" /> {label}
               </span>
             ))}
           </div>
@@ -153,8 +156,8 @@ export default function AboutPage() {
       </section>
 
       <main>
-        {/* ───────────────────────── 1. CARE & REPAIR ───────────────────────── */}
-        <section id="care" className="scroll-mt-32 py-16 md:py-18">
+        {/* ──────────── 1. CARE & REPAIR ──────────── */}
+        <section id="care" className="scroll-mt-32 py-16 md:py-20 bg-base-200/70">
           <div className="container mx-auto px-4 sm:px-6">
             <SectionHeading
               subtitle="After You Buy"
@@ -164,20 +167,20 @@ export default function AboutPage() {
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-12 md:mt-16">
               {/* Resizing */}
-              <div className="bg-white rounded-3xl border border-stone-100 shadow-sm overflow-hidden flex flex-col">
-                <div className="relative h-50">
+              <div className="bg-base-100 rounded-3xl border border-base-300 shadow-lg shadow-secondary/5 overflow-hidden flex flex-col">
+                <div className="relative h-56 sm:h-60">
                   <img
                     src={RESIZE_IMG}
                     alt="Ring resizing"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/75 to-transparent" />
                   <div className="absolute bottom-4 left-5 flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-gold-500 flex items-center justify-center shadow-lg">
-                      <Ruler className="w-5 h-5 text-white" />
+                    <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+                      <Ruler className="w-5 h-5 text-primary-content" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold text-white">
+                    <h3 className="font-serif text-2xl font-bold text-secondary-content">
                       Resizing
                     </h3>
                   </div>
@@ -185,11 +188,14 @@ export default function AboutPage() {
 
                 <div className="p-6 sm:p-8 space-y-6">
                   <div>
-                    <h4 className="font-semibold text-navy-900 text-base mb-2 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
+                    <h4 className="font-semibold text-base-content text-base mb-2 flex items-center gap-2">
+                      <span
+                        className="w-1.5 h-1.5 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
                       Can a ring be re-sized?
                     </h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-base-content/60 leading-relaxed">
                       Whether a ring can be re-sized depends on multiple factors
                       like design, new ring size, and more. First, please get in
                       touch with our customer care via call / chat / email to
@@ -198,26 +204,29 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-navy-900 text-base mb-3 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
+                    <h4 className="font-semibold text-base-content text-base mb-3 flex items-center gap-2">
+                      <span
+                        className="w-1.5 h-1.5 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
                       How much will it cost?
                     </h4>
                     <ul className="space-y-2.5">
                       {resizeCost.map((c, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-3 text-sm text-slate-600"
+                          className="flex items-start gap-3 text-sm text-base-content/60"
                         >
-                          <Check className="w-4 h-4 text-gold-600 mt-0.5 shrink-0" />
+                          <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                           <span>{c}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="flex items-start gap-3 bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                    <p className="text-xs text-amber-800 leading-relaxed">
+                  <div className="flex items-start gap-3 bg-warning/10 border border-warning/20 rounded-xl p-4">
+                    <AlertTriangle className="w-4 h-4 text-warning mt-0.5 shrink-0" />
+                    <p className="text-xs text-warning leading-relaxed font-medium">
                       This feature is not available for international orders
                       (orders shipped abroad from India).
                     </p>
@@ -226,20 +235,20 @@ export default function AboutPage() {
               </div>
 
               {/* Repairs */}
-              <div className="bg-white rounded-3xl border border-stone-100 shadow-sm overflow-hidden flex flex-col">
-                <div className="relative h-50">
+              <div className="bg-base-100 rounded-3xl border border-base-300 shadow-lg shadow-secondary/5 overflow-hidden flex flex-col">
+                <div className="relative h-56 sm:h-60">
                   <img
                     src={REPAIR_IMG}
                     alt="Jewellery repair"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral/80 to-transparent" />
                   <div className="absolute bottom-4 left-5 flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-rose-500 flex items-center justify-center shadow-lg">
-                      <Wrench className="w-5 h-5 text-white" />
+                    <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center shadow-lg">
+                      <Wrench className="w-5 h-5 text-accent-content" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold text-white">
+                    <h3 className="font-serif text-2xl font-bold text-secondary-content">
                       Repairs
                     </h3>
                   </div>
@@ -249,23 +258,23 @@ export default function AboutPage() {
                   <ol className="space-y-4">
                     {repairSteps.map((s, i) => (
                       <li key={i} className="flex items-start gap-4">
-                        <span className="w-8 h-8 rounded-full bg-navy-900 text-gold-400 text-sm font-bold flex items-center justify-center shrink-0">
+                        <span className="w-8 h-8 rounded-full bg-secondary text-accent text-sm font-bold flex items-center justify-center shrink-0">
                           {i + 1}
                         </span>
-                        <p className="text-sm text-slate-600 leading-relaxed pt-1">
+                        <p className="text-sm text-base-content/60 leading-relaxed pt-1">
                           {s}
                         </p>
                       </li>
                     ))}
                   </ol>
 
-                  <div className="mt-6 pt-6 border-t border-stone-100 space-y-2.5">
-                    <p className="flex items-start gap-3 text-sm text-slate-600">
-                      <Check className="w-4 h-4 text-gold-600 mt-0.5 shrink-0" />
+                  <div className="mt-6 pt-6 border-t border-base-300 space-y-2.5">
+                    <p className="flex items-start gap-3 text-sm text-base-content/60">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>Shipping charges are borne by the customer.</span>
                     </p>
-                    <p className="flex items-start gap-3 text-xs text-amber-800 bg-amber-50 border border-amber-100 rounded-xl p-3">
-                      <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                    <p className="flex items-start gap-3 text-xs text-warning font-medium bg-warning/10 border border-warning/20 rounded-xl p-3">
+                      <AlertTriangle className="w-4 h-4 text-warning mt-0.5 shrink-0" />
                       <span>
                         Not available for international orders (shipped abroad
                         from India).
@@ -278,11 +287,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ───────────────────────── 2. RING SIZING ───────────────────────── */}
-        <section
-          id="ring-sizing"
-          className="scroll-mt-32 py-16 md:py-20 bg-white"
-        >
+        {/* ──────────── 2. RING SIZING ──────────── */}
+        <section id="ring-sizing" className="scroll-mt-32 py-16 md:py-20 bg-base-100">
           <div className="container mx-auto px-4 sm:px-6">
             <SectionHeading
               subtitle="Find Your Fit"
@@ -292,10 +298,10 @@ export default function AboutPage() {
 
             {/* How to measure */}
             <div className="mt-12 md:mt-14 grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 bg-cream rounded-3xl border border-stone-100 p-6 sm:p-8">
-                <h3 className="font-serif text-xl font-bold text-navy-900 mb-5 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-xl bg-gold-50 flex items-center justify-center">
-                    <Ruler className="w-5 h-5 text-gold-600" />
+              <div className="lg:col-span-2 bg-base-200/70 rounded-3xl border border-base-300 p-6 sm:p-8">
+                <h3 className="font-serif text-xl font-bold text-base-content mb-5 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
+                    <Ruler className="w-5 h-5 text-primary" />
                   </span>
                   Measure an Existing Ring
                 </h3>
@@ -307,40 +313,40 @@ export default function AboutPage() {
                     "Match that diameter to the corresponding size in the chart below.",
                   ].map((s, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <span className="w-7 h-7 rounded-full bg-gold-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                      <span className="w-7 h-7 rounded-full bg-primary text-primary-content text-xs font-bold flex items-center justify-center shrink-0">
                         {i + 1}
                       </span>
-                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed pt-0.5">
+                      <p className="text-sm sm:text-base text-base-content/65 leading-relaxed pt-0.5">
                         {s}
                       </p>
                     </li>
                   ))}
                 </ol>
-                <div className="mt-6 flex items-center gap-3 bg-gold-50 border border-gold-100 rounded-xl p-4">
-                  <AlertTriangle className="w-4 h-4 text-gold-600 shrink-0" />
-                  <p className="text-xs sm:text-sm text-gold-800 font-medium">
+                <div className="mt-6 flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-xl p-4">
+                  <AlertTriangle className="w-4 h-4 text-primary shrink-0" />
+                  <p className="text-xs sm:text-sm text-primary font-medium">
                     Be sure to measure in <strong>millimetres</strong>.
                   </p>
                 </div>
               </div>
 
               {/* Side card */}
-              <div className="bg-navy-900 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between">
+              <div className="bg-secondary rounded-3xl p-6 sm:p-8 text-secondary-content flex flex-col justify-between shadow-lg shadow-secondary/20">
                 <div>
-                  <p className="text-gold-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+                  <p className="text-accent text-xs font-semibold uppercase tracking-luxe mb-3">
                     Still Unsure?
                   </p>
                   <h3 className="font-serif text-2xl font-bold mb-3">
                     Let our team help
                   </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">
+                  <p className="text-secondary-content/70 text-sm leading-relaxed">
                     Our experts can confirm your size over call, chat or email —
                     free of charge, before you order.
                   </p>
                 </div>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-white font-semibold px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                  className="mt-6 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-content font-semibold px-6 py-3 rounded-full transition-all hover:-translate-y-0.5 shadow-md shadow-primary/25"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -348,9 +354,9 @@ export default function AboutPage() {
             </div>
 
             {/* The chart */}
-            <div className="mt-8 overflow-auto max-h-[520px] rounded-2xl border border-stone-200 shadow-sm">
+            <div className="mt-8 overflow-auto max-h-[520px] rounded-2xl border border-base-300 bg-base-100 shadow-md shadow-secondary/5">
               <table className="w-full text-sm">
-                <thead className="sticky top-0 z-10 bg-navy-900 text-white">
+                <thead className="sticky top-0 z-10 bg-secondary text-secondary-content">
                   <tr>
                     <th className="text-left px-4 sm:px-6 py-4 font-semibold whitespace-nowrap">
                       Indian Standard
@@ -370,18 +376,18 @@ export default function AboutPage() {
                   {ringSizes.map((r, i) => (
                     <tr
                       key={r.in}
-                      className={i % 2 ? "bg-stone-50/70" : "bg-white"}
+                      className={i % 2 ? "bg-base-200/40" : "bg-base-100"}
                     >
-                      <td className="px-4 sm:px-6 py-3 font-semibold text-navy-900">
+                      <td className="px-4 sm:px-6 py-3 font-semibold text-base-content border-t border-base-200/70">
                         {r.in}
                       </td>
-                      <td className="px-4 sm:px-6 py-3 text-slate-600">
+                      <td className="px-4 sm:px-6 py-3 text-base-content/60 border-t border-base-200/70">
                         {r.usa}
                       </td>
-                      <td className="px-4 sm:px-6 py-3 text-right font-mono text-slate-700">
+                      <td className="px-4 sm:px-6 py-3 text-right font-mono text-base-content/70 border-t border-base-200/70">
                         {r.dia}
                       </td>
-                      <td className="px-4 sm:px-6 py-3 text-right font-mono text-slate-700">
+                      <td className="px-4 sm:px-6 py-3 text-right font-mono text-base-content/70 border-t border-base-200/70">
                         {r.circ}
                       </td>
                     </tr>
@@ -392,17 +398,17 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ───────────────────────── 3. BANGLE & BRACELET ───────────────────────── */}
-        <section id="bangle-sizing" className="scroll-mt-32 py-16 md:py-20">
+        {/* ──────────── 3. BANGLE & BRACELET ──────────── */}
+        <section id="bangle-sizing" className="scroll-mt-32 py-16 md:py-20 bg-base-100">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               {/* Image */}
               <div className="relative order-2 lg:order-1">
                 <div
-                  className="absolute -inset-3 border border-gold-400/40 rounded-3xl"
+                  className="absolute -inset-3 border border-accent/40 rounded-3xl"
                   aria-hidden="true"
                 />
-                <div className="relative overflow-hidden rounded-2xl aspect-[6/5] max-h-[520px] bg-stone-200 shadow-xl">
+                <div className="relative overflow-hidden rounded-2xl aspect-[6/5] max-h-[520px] bg-base-300 shadow-xl shadow-secondary/10">
                   <img
                     src={BANGLE_IMG}
                     alt="Bangles and bracelets"
@@ -423,16 +429,16 @@ export default function AboutPage() {
                   {bangleTips.map(({ icon: Icon, title, desc }, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-4 bg-white rounded-2xl border border-stone-100 p-5 shadow-sm hover:shadow-md transition-shadow"
+                      className="flex items-start gap-4 bg-base-100 rounded-2xl border border-base-300 p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
                     >
-                      <div className="w-11 h-11 rounded-xl bg-gold-50 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-gold-600" />
+                      <div className="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-navy-900 mb-1">
+                        <h4 className="font-semibold text-base-content mb-1">
                           {title}
                         </h4>
-                        <p className="text-sm text-slate-600 leading-relaxed">
+                        <p className="text-sm text-base-content/60 leading-relaxed">
                           {desc}
                         </p>
                       </div>
@@ -444,8 +450,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ───────────────────────── 4. FAQ ───────────────────────── */}
-        <section id="faq" className="scroll-mt-32 py-16 md:py-20 bg-white">
+        {/* ──────────── 4. FAQ ──────────── */}
+        <section id="faq" className="scroll-mt-32 py-16 md:py-20 bg-base-200/70">
           <div className="container mx-auto px-4 sm:px-6">
             <SectionHeading
               subtitle="Good To Know"
@@ -458,41 +464,45 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ───────────────────────── CLOSING CTA ───────────────────────── */}
-        <section className="py-16 md:py-20">
+        {/* ──────────── CLOSING CTA ──────────── */}
+        <section className="py-16 md:py-20 bg-base-100">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="relative rounded-3xl overflow-hidden bg-navy-900 text-white">
+            <div className="relative rounded-3xl overflow-hidden bg-secondary text-secondary-content shadow-2xl shadow-secondary/30">
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-20"
+                className="absolute inset-0 bg-cover bg-center opacity-40"
                 style={{ backgroundImage: `url(${HERO_IMG})` }}
                 aria-hidden="true"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/60 to-secondary/30" />
               <div className="relative p-8 sm:p-12 text-center max-w-2xl mx-auto">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+                <p className="text-accent text-xs font-semibold uppercase tracking-luxe mb-4">
+                  We&apos;re here for you
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-balance">
                   Still have questions?
                 </h2>
-                <p className="text-slate-300 text-base md:text-lg mb-8">
+                <p className="text-secondary-content/70 text-base md:text-lg mb-8">
                   Our gemologists and care team are here to help you with
                   sizing, resizing, repairs and everything in between.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
-                    href="tel:+919540838797"
-                    className="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5"
+                    href="tel:+918822664433"
+                    className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-content font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 shadow-md shadow-primary/25"
                   >
                     <Phone className="w-4 h-4" /> Call Us
                   </a>
                   <a
-                    href="mailto:info@umakantechnologies.in"
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-3.5 rounded-full transition-all"
+                    href="mailto:aadyaajewelscvd@gmail.com"
+                    className="inline-flex items-center justify-center gap-2 bg-secondary-content/10 hover:bg-secondary-content/20 border border-secondary-content/25 text-secondary-content font-semibold px-7 py-3.5 rounded-full transition-all"
                   >
                     <Mail className="w-4 h-4" /> Email Us
                   </a>
                   <a
-                    href="https://wa.me/919540838797"
+                    href="https://wa.me/918822664433"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-7 py-3.5 rounded-full transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-success hover:bg-success/90 text-success-content font-semibold px-7 py-3.5 rounded-full transition-all"
                   >
                     <MessageSquare className="w-4 h-4" /> WhatsApp
                   </a>

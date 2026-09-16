@@ -9,8 +9,9 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Shop All", href: "/shop" },
   { label: "Rings", href: "/shop?category=rings" },
-  { label: "Solitaires", href: "/shop?category=solitaires" },
+  { label: "Necklaces", href: "/shop?category=necklaces" },
   { label: "Earrings", href: "/shop?category=earrings" },
+  { label: "Bracelets", href: "/shop?category=bracelets" },
   { label: "Our Story", href: "/our-story" },
 ];
 
@@ -52,7 +53,7 @@ export default function Header() {
             : "border-transparent bg-base-100"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-2 py-3 sm:px-4">
           {/* Mobile menu toggle */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
@@ -68,16 +69,16 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="group flex flex-col items-center leading-none">
-            <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] uppercase">
+            <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.15em] uppercase">
               Aadyaa<span className="gold-gradient-text"> Jewels</span>
             </span>
-            <span className="mt-1 hidden text-[9px] uppercase tracking-[0.5em] text-base-content/50 sm:block">
+            <span className="mt-1 hidden text-[9px] uppercase tracking-[0.4em] text-base-content/50 sm:block">
               Lab-grown diamond jewellery
-            </span>
+            </span> 
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {NAV_LINKS.map((link) => {
               const active =
                 link.href === "/"
@@ -108,12 +109,12 @@ export default function Header() {
                 <input
                   name="q"
                   placeholder="Search jewellery…"
-                  className="w-36 bg-transparent text-sm outline-none placeholder:text-base-content/40"
+                  className="w-30 bg-transparent text-sm outline-none placeholder:text-base-content/40"
                 />
               </label>
             </form>
 
-            <button
+            {/* <button
               className="btn btn-ghost btn-sm btn-square hidden sm:inline-flex"
               aria-label="Account"
               title="Account"
@@ -122,7 +123,7 @@ export default function Header() {
                 <circle cx="12" cy="8" r="4" />
                 <path strokeLinecap="round" d="M4.5 20c1.6-3.2 4.2-4.8 7.5-4.8s5.9 1.6 7.5 4.8" />
               </svg>
-            </button>
+            </button> */}
 
             <button
               onClick={openCart}
@@ -130,12 +131,12 @@ export default function Header() {
               aria-label="Open cart"
               title="Cart"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="size-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="size-6">
                 <path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 8Z" />
                 <path strokeLinecap="round" d="M9 10V6a3 3 0 0 1 6 0v4" />
               </svg>
               {count > 0 && (
-                <span className="badge badge-primary badge-xs absolute -right-0.5 -top-0.5 h-4 min-h-4 w-4 items-center justify-center p-0 text-[10px] font-semibold">
+                <span className="badge badge-primary badge-xs absolute -right-0.5 -top-0.5 h-4.5 min-h-4.5 w-4.5 items-center justify-center p-0 text-[10px] font-semibold">
                   {count}
                 </span>
               )}
