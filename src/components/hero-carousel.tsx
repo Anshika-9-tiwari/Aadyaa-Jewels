@@ -5,7 +5,7 @@ import Carousel from "@/components/carousel";
 
 const SLIDES = [
   {
-    image: "/images/hero-1.jpg",
+    image: "rings/ready-to-engagement-ring.avif",
     kicker: "Lab-Grown Diamond Jewellery",
     title: "Brilliance, Without the Earth's Cost",
     subtitle:
@@ -14,7 +14,7 @@ const SLIDES = [
     href: "/shop?category=solitaires",
   },
   {
-    image: "/images/hero-2.avif",
+    image: "/images/hero-1.jpg",
     kicker: "New Season · 2026 Collection",
     title: "Classic to Contemporary",
     subtitle:

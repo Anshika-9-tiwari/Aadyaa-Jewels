@@ -36,13 +36,13 @@ export default function Header() {
   return (
     <>
       {/* Announcement bar */}
-      <div className="bg-secondary text-secondary-content text-[11px] sm:text-xs tracking-luxe uppercase">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-8 overflow-hidden px-4 py-2">
-          <span className="hidden sm:inline">Free shipping across India</span>
+      <div className="bg-secondary text-secondary-content text-[12.5px] sm:text-[12.5px]  tracking-widest uppercase">
+        <div className="mx-auto flex  max-w-7xl items-center justify-center gap-10 overflow-hidden px-4 py-3">
+          <span className="truncate">Showroom: 7B/3, Maharani bagh, New Delhi, +91 8822664433</span>
           <span className="hidden md:inline text-accent">✦</span>
           <span className="hidden sm:inline">HUID certified lab-grown diamonds</span>
-          <span className="hidden md:inline text-accent">✦</span>
-          <span className="truncate">Ethical · Sustainable · Conflict-free</span>
+          <span className="hidden md:inline text-accent">✦</span> 
+          <span className="hidden sm:inline">Ethical · Sustainable · Conflict-free</span>
         </div>
       </div>
 

@@ -38,7 +38,7 @@ export default function Footer() {
                 aria-label={s}
                 className="btn btn-circle btn-outline btn-sm border-secondary-content/25 text-secondary-content/70 hover:border-accent hover:text-accent"
               >
-                <span className="text-[10px] uppercase tracking-wider">{s.slice(0, 1).toUpperCase()}</span>
+                <span className="text-[10px] uppercase tracking-wide">{s.slice(0, 3).toUpperCase()}</span>
               </a>
             ))}
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
           <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Visit Us</h3>
           <address className="mt-4 space-y-2.5 text-sm not-italic text-secondary-content/70">
             <p>Aadyaa Jewels Showroom</p>
-            <p>7B/3, Maharani Bagh, C V Raman Marg, Opp. Gurudwara , Below HDFC Bank, New Delhi - 110025</p>
+            <p>7B/3, Maharani Bagh, New Delhi - 110025</p>
             <p className="pt-2">
               <a href="tel:+918822664433" className="hover:text-accent">+91 88226 64433</a>
             </p>

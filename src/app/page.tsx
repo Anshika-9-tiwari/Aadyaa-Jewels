@@ -65,7 +65,7 @@ const JOURNAL = [
     excerpt:
       "Every diamond purchase is a decision layered with emotion, budget, and values. Here's how to choose with confidence.",
     image:
-      "https://images.pexels.com/photos/15777275/pexels-photo-15777275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/rings/nadia-diamond-ring-2.webp",
   },
   {
     title: "The Future of Ethical Luxury: Why Sustainability Matters in Jewellery",
@@ -73,7 +73,7 @@ const JOURNAL = [
     excerpt:
       "Ethical luxury is no longer a niche but a necessity, reshaping how jewellery is designed, grown and worn.",
     image:
-      "https://images.pexels.com/photos/3641059/pexels-photo-3641059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/necklaces/malibu-blue-lab-diamond-solitaire-pendant-3.jpg",
   },
   {
     title: "The Ultimate Diamond Jewellery Guide: Rings, Studs, Solitaires & Pendants",
@@ -81,7 +81,7 @@ const JOURNAL = [
     excerpt:
       "From everyday studs to once-in-a-lifetime solitaires — how to choose the perfect piece for every occasion.",
     image:
-      "https://images.pexels.com/photos/13204122/pexels-photo-13204122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/earrings/pacific-green-lab-diamond-pavé-earrings-2.jpg",
   },
 ];
 
@@ -168,7 +168,7 @@ export default async function HomePage() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/ring-2.jpg" alt="Master craftsman at work" className="aspect-[4/5] w-full object-cover" />
+              <img src="/images/home-ring.avif" alt="Master craftsman at work" className="aspect-[4/5] w-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-accent/40 bg-base-100 px-6 py-5 shadow-xl sm:block">
               <p className="font-serif text-4xl font-semibold gold-gradient-text">20+</p>
@@ -308,7 +308,7 @@ export default async function HomePage() {
           </div>
           <div className="order-1 overflow-hidden rounded-2xl lg:order-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero-1.jpg" alt="Type IIA lab-grown diamond ring" className="aspect-[4/3] w-full object-cover" />
+            <img src="/rings/ready-to-engagement-ring.avif" alt="Type IIA lab-grown diamond ring" className="aspect-[4/3] w-full object-cover" />
           </div>
         </div>
       </section>
