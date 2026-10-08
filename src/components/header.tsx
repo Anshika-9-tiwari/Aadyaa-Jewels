@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Rings", href: "/shop?category=rings" },
   { label: "Necklaces", href: "/shop?category=necklaces" },
   { label: "Earrings", href: "/shop?category=earrings" },
-  { label: "Bracelets", href: "/shop?category=bracelets" },
+  { label: "Bracelets", href: "/shop?category=bangles-bracelets" },
   { label: "Our Story", href: "/our-story" },
 ];
 

@@ -24,13 +24,13 @@ export const metadata: Metadata = {
 
 /* ── Imagery (stock, hotlinked) ── */
 const HERO_IMG =
-  "https://images.pexels.com/photos/12427696/pexels-photo-12427696.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1920&h=1080";
+  "/images/bridal-set.avif";
 const RESIZE_IMG =
   "https://images.pexels.com/photos/6263112/pexels-photo-6263112.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=620";
 const REPAIR_IMG =
   "https://images.pexels.com/photos/7167019/pexels-photo-7167019.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=620";
 const BANGLE_IMG =
-  "https://images.pexels.com/photos/9808451/pexels-photo-9808451.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=750";
+  "/bangles/sol-starburst-diamond-bangles-2.jpg";
 
 /* ── Ring sizing data ── */
 const ringSizes = [
@@ -109,19 +109,19 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-base-100 text-base-content">
       {/* ───────────────────────── HERO ───────────────────────── */}
-      <section className="relative h-[52vh] min-h-[440px] flex items-center overflow-hidden bg-secondary">
+      <section className="relative h-[52vh] min-h-[500px] flex items-center overflow-hidden bg-secondary">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-neutral/85 via-secondary/75 to-secondary/60"
+          className="absolute inset-0 bg-gradient-to-r from-neutral/85 via-secondary/75 to-secondary/65"
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-6 sm:px-8 text-secondary-content">
           <nav
-            className="flex items-center gap-2 text-xs md:text-sm text-secondary-content/60 mb-6"
+            className="flex items-center gap-2 text-xs md:text-sm text-secondary-content/65 mb-6"
             aria-label="Breadcrumb"
           >
             <Link href="/" className="hover:text-secondary-content transition">

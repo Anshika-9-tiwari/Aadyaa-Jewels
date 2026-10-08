@@ -43,7 +43,7 @@ export default function HeroCarousel() {
       className="relative"
     >
       {SLIDES.map((slide) => (
-        <div key={slide.title} className="relative flex min-h-[560px] items-center overflow-hidden sm:min-h-[640px]">
+        <div key={slide.title} className="relative flex min-h-[460px] items-center overflow-hidden sm:min-h-[520px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={slide.image}
